@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="annuity" scope="session" class="business.Annuity"/>
+<%@page import="business.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,15 +15,15 @@
     <body>
         <h1>Annuity Results:</h1>
         <p>An annuity with deposit of:<br>
-            <jsp:getProperty name="annuity" property="deposit" />
-            each month, <br>
-            earning <jsp:getProperty name="annuity" property="rate" />
-            % per year <br>
-            for <jsp:getProperty name="annuity" property="term" />
-            months <br>
-
+            ${annuity.deposit} each month, <br>
+            and earning ${annuity.rate} % per year <br>
+            for ${annuity.finalValue} months <br>
         </p>
         <br>
+        
+        <form action="NewAnnuity" method="post">
+            <input 
+        </form>
 
     </body>
 </html>

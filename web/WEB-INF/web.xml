@@ -4,9 +4,17 @@
         <servlet-name>AnnuityCalcServlet</servlet-name>
         <servlet-class>servlets.AnnuityCalcServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewAnnuityServlet</servlet-name>
+        <servlet-class>servlets.NewAnnuityServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AnnuityCalcServlet</servlet-name>
         <url-pattern>/AnnuityCalc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewAnnuityServlet</servlet-name>
+        <url-pattern>/NewAnnuity</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

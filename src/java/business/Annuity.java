@@ -1,5 +1,7 @@
 package business;
 
+import java.util.ArrayList;
+
 public class Annuity {
    private double deposit, rate;
    private int term;
@@ -92,5 +94,21 @@ public class Annuity {
      */
     public void setTerm(int term) {
         this.term = term;
+    }
+    
+    
+    public ArrayList<AnnuityMonth> getMonths() {
+        
+        ArrayList<AnnuityMonth> mos = new ArrayList<>();
+        
+        if(!built) {
+            buildAnnuity();
+        }
+        for(int i = 0; i < this.term; i++) {
+            AnnuityMonth m = new AnnuityMonth((i + 1), this.bbal[i], this.deposit, this.iearn[i], this.ebal[i]);
+            mos.add(m);
+        }
+        
+        return mos;
     }
 }
