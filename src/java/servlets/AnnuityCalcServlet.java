@@ -50,11 +50,28 @@ public class AnnuityCalcServlet extends HttpServlet {
                     emsg += "Illegal deposit value<br>";
                     }
         // finsihed program needs try/catch for each of the following
-        rate = Double.parseDouble(request.getParameter("irt"));
-        a.setRate(rate);
-        term = Integer.parseInt(request.getParameter("term"));
-        a.setTerm(term);
+        try {
+            rate = Double.parseDouble(request.getParameter("irt"));
+            if(rate <= 0) {
+                emsg += "Interest rate must be greater than zero <br>";
+            } else {
+                a.setRate(rate);
+            } // end if/else
+        } catch (Exception e) {
+            emsg += "Rate is incorrect: " + e.getMessage() + "<br>";
+        } // end try/catch
         
+        try {
+            term = Integer.parseInt(request.getParameter("term"));
+            if(term <= 0) {
+                emsg += "Term must be 1 month or more.<br>";
+            } else {
+                a.setTerm(term);
+            }
+        } catch (Exception e) {
+            emsg += "Invalid term length: " + e.getMessage() + "<br>";
+        }
+                
         if(!emsg.isEmpty()) {
             URL = "/AnnuityInput.jsp";
             request.setAttribute("emsg", emsg);
@@ -67,9 +84,7 @@ public class AnnuityCalcServlet extends HttpServlet {
         RequestDispatcher disp = getServletContext().getRequestDispatcher(URL);
         disp.forward(request, response);
         
-    }
-    
-            
+    }    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

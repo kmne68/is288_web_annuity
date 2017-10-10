@@ -42,8 +42,8 @@ public class AnnuityMonth {
         this.month = month;
     }
 
-    public double getBbal() {
-        return bbal;
+    public String getBbal() {
+        return curr.format(bbal);
     }
 
     public void setBbal(double bbal) {
