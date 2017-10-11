@@ -28,14 +28,15 @@
         <form action="AnnuitySchedule.jsp" method="post">
             <input type="submit" value="Schedule">
         </form>
-        <%
+        <!--%
             HttpSession sess = request.getSession();
             sess.removeAttribute("annuity");
-        %>
-       <!--form action="NewAnnuity" method="post">
+        %-->
+        <br>
+       <form action="NewAnnuity" method="post">
            <input type=submit" value="New Annuity">
-       </form-->
-       
-        <a href="AnnuityInput.jsp">New Annuity</a>
+       </form>
+       <br>
+        <!--a href="AnnuityInput.jsp">New Annuity</a-->
     </body>
 </html>

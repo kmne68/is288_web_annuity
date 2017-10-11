@@ -57,19 +57,29 @@ public class AnnuityMonth {
     public void setDeposit(double deposit) {
         this.deposit = deposit;
     }
-
+    
+    public String getIearn() {
+        return curr.format(iearn);
+    }
+/*
     public double getIearn() {
         return iearn;
     }
-
+*/
     public void setIearn(double iearn) {
         this.iearn = iearn;
     }
+    
+    
+    public String getEbal() {
+        return curr.format(ebal);
+    }
 
+/*
     public double getEbal() {
         return ebal;
     }
-
+*/
     public void setEbal(double ebal) {
         this.ebal = ebal;
     }

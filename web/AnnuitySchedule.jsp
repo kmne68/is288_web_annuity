@@ -4,9 +4,9 @@
     Author     : Keith Emery
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!--%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!--%@page import="business.*"%-->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="business.*"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,14 +26,17 @@
             <c:forEach var="anmo" items="${annuity.months}">
                 <tr>
                     <td align="right">${anmo.month}</td>
-                    <td align="right">${anmo.bbal}}</td>
+                    <td align="right">${anmo.bbal}</td>
                     <td align="right">${anmo.deposit}</td>
                     <td align="right">${anmo.iearn}</td>
                     <td align="right">${anmo.ebal}</td>
                 </tr>
-            </c:forEach>
-            
+            </c:forEach>            
         </table>
         <br>
+        <a href="AnnuityInput.jsp">New Annuity</a>
+        <br>        
+        <%request.getSession().removeAttribute("annuity");%>
+        
     </body>
 </html>

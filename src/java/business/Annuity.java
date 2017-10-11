@@ -107,8 +107,7 @@ public class Annuity {
         for(int i = 0; i < this.term; i++) {
             AnnuityMonth m = new AnnuityMonth((i + 1), this.bbal[i], this.deposit, this.iearn[i], this.ebal[i]);
             mos.add(m);
-        }
-        
+        }        
         return mos;
     }
 }

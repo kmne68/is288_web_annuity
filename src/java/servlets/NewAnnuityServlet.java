@@ -33,6 +33,8 @@ public class NewAnnuityServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        String URL = "/AnnuityInput.jsp";
+        
         try {
             HttpSession sess =request.getSession();
             sess.removeAttribute("annuity");
@@ -41,8 +43,8 @@ public class NewAnnuityServlet extends HttpServlet {
             
         }
         
-    //    RequestDispatcher disp = getServiceContext().getRequestDispatcher("AnnutiyInput.jsp");
-    //    disp.forward(request, response);
+        RequestDispatcher disp = getServletContext().getRequestDispatcher(URL);
+        disp.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
