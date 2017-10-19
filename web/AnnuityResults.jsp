@@ -33,9 +33,9 @@
             sess.removeAttribute("annuity");
         %-->
         <br>
-       <form action="NewAnnuity" method="post">
-           <input type=submit" value="New Annuity">
-       </form>
+        <form action="AnnuityInput.jsp" method="post">
+            <input type="submit" value="New Annuity">
+        </form>
        <br>
         <!--a href="AnnuityInput.jsp">New Annuity</a-->
     </body>
