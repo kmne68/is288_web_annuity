@@ -44,7 +44,7 @@ public class AnnuityCalcServlet extends HttpServlet {
             if(deposit <= 0) {
                 emsg += "Deposit must be positive<br>";
             } else {
-                a.setDeposit(deposit);
+                a.setDepositEarly(deposit);
             } 
         } catch (Exception e) {
                     emsg += "Illegal deposit value<br>";

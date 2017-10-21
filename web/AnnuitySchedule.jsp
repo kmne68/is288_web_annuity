@@ -19,7 +19,8 @@
             <tr>
                 <th>Month</th>
                 <th>Beginning Balance</th>
-                <th>Deposit</th>
+                <th>Deposit Early</th>
+                <th>Deposit Late</th>
                 <th>Interest Earned</th>
                 <th>Ending Balance</th>
             </tr>
@@ -27,7 +28,8 @@
                 <tr>
                     <td align="right">${anmo.month}</td>
                     <td align="right">${anmo.bbal}</td>
-                    <td align="right">${anmo.deposit}</td>
+                    <td align="right">${anmo.depositEarly}</td>
+                    <td align="right">${anmo.depositLate}</td>
                     <td align="right">${anmo.iearn}</td>
                     <td align="right">${anmo.ebal}</td>
                 </tr>

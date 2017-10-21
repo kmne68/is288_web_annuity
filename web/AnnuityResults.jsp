@@ -15,7 +15,7 @@
     <body>
         <h1>Annuity Results:</h1>
         <p>An annuity with deposit of:<br>
-            <jsp:getProperty name="annuity" property="deposit" />
+            <jsp:getProperty name="annuity" property="totalDeposit" />
             each month, <br>
             earning <jsp:getProperty name="annuity" property="rate" />
             % per year <br>

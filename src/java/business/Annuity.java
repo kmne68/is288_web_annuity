@@ -3,28 +3,40 @@ package business;
 import java.util.ArrayList;
 
 public class Annuity {
-   private double deposit, rate;
+   private double depositEarly, depositLate, totalDeposit, rate;
    private int term;
    private double[] bbal, iearn, ebal;
    private boolean built;
    
    
    public Annuity() {
-       this.deposit = 0;
+       this.depositEarly = 0;
+       this.depositLate = 0;
+       this.totalDeposit = 0;
        this.rate = 0;
        this.term = 0;
        this.built = false;
    }
 
-   public Annuity(double deposit, double rate, int term) {
-       this.deposit = deposit;
+   public Annuity(double depositEarly, double depositLate, double rate, int term) {
+       this.depositEarly = depositEarly;
+       this.depositLate = depositLate;
+       this.totalDeposit = depositEarly + depositLate;
        this.rate = rate;
        this.term = term;
        buildAnnuity();
    }
 
-   public double getDeposit() {
-       return this.deposit;
+   public double getDepositEarly() {
+       return this.depositEarly;
+   }
+   
+   public double getDepositLate() {
+       return this.depositLate;
+   }
+   
+   public double getTotalDeposit() {
+       return this.totalDeposit;
    }
 
    public double getRate() {
@@ -68,8 +80,8 @@ public class Annuity {
            if (i > 0) {
                bbal[i] = ebal[i-1];
            }
-           iearn[i] = (bbal[i] + this.deposit) * (this.rate / 12.0);
-           ebal[i] = (bbal[i] + this.deposit + iearn[i]);
+           iearn[i] = (bbal[i] + this.depositEarly) * (this.rate / 12.0);
+           ebal[i] = (bbal[i] + this.depositEarly + iearn[i] + this.depositLate);
        }
        built = true;
        return ;
@@ -78,9 +90,15 @@ public class Annuity {
     /**
      * @param deposit the deposit to set
      */
-    public void setDeposit(double deposit) {
-        this.deposit = deposit;
+    public void setDepositEarly(double deposit) {
+        this.depositEarly = deposit;
     }
+    
+    
+    public void setDepositLate(double deposit) {
+        this.depositLate = deposit;
+    }
+    
 
     /**
      * @param rate the rate to set
@@ -105,7 +123,7 @@ public class Annuity {
             buildAnnuity();
         }
         for(int i = 0; i < this.term; i++) {
-            AnnuityMonth m = new AnnuityMonth((i + 1), this.bbal[i], this.deposit, this.iearn[i], this.ebal[i]);
+            AnnuityMonth m = new AnnuityMonth((i + 1), this.bbal[i], this.depositEarly, this.depositLate, this.iearn[i], this.ebal[i]);
             mos.add(m);
         }        
         return mos;

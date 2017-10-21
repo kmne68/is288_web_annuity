@@ -12,10 +12,10 @@
 
         <form action="AnnuityCalc" name="adata" id="adata" method="post">
             Deposit at Beginning of Month:
-            <input type="text" name="amt1" id="amt1" value="${annuity.deposit}"/><br><br>
+            <input type="text" name="amt1" id="amt1" value="${annuity.depositEarly}"/><br><br>
             
             Deposit at End of Month:
-            <input tyep="text" name="amt2" id="amt2" value="${annuity.deposit}"/><br><br>
+            <input tyep="text" name="amt2" id="amt2" value="${annuity.depositLate}"/><br><br>
             
             Annual Interest Rate:
             <input type="text" name="irt" id="irt" value="${annuity.rate}"/><br><br>
