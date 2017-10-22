@@ -3,7 +3,7 @@ package business;
 import java.util.ArrayList;
 
 public class Annuity {
-   private double depositEarly, depositLate, totalDeposit, rate;
+   private double depositEarly, depositLate, depositTotal, rate;
    private int term;
    private double[] bbal, iearn, ebal;
    private boolean built;
@@ -12,7 +12,7 @@ public class Annuity {
    public Annuity() {
        this.depositEarly = 0;
        this.depositLate = 0;
-       this.totalDeposit = 0;
+       this.depositTotal = 0;
        this.rate = 0;
        this.term = 0;
        this.built = false;
@@ -21,7 +21,7 @@ public class Annuity {
    public Annuity(double depositEarly, double depositLate, double rate, int term) {
        this.depositEarly = depositEarly;
        this.depositLate = depositLate;
-       this.totalDeposit = depositEarly + depositLate;
+       this.depositTotal = depositEarly + depositLate;
        this.rate = rate;
        this.term = term;
        buildAnnuity();
@@ -36,7 +36,7 @@ public class Annuity {
    }
    
    public double getTotalDeposit() {
-       return this.totalDeposit;
+       return (this.depositEarly + this.depositLate);
    }
 
    public double getRate() {
@@ -123,7 +123,7 @@ public class Annuity {
             buildAnnuity();
         }
         for(int i = 0; i < this.term; i++) {
-            AnnuityMonth m = new AnnuityMonth((i + 1), this.bbal[i], this.depositEarly, this.depositLate, this.iearn[i], this.ebal[i]);
+            AnnuityMonth m = new AnnuityMonth((i + 1), this.bbal[i], this.depositEarly, this.depositLate, this.depositTotal, this.iearn[i], this.ebal[i]);
             mos.add(m);
         }        
         return mos;

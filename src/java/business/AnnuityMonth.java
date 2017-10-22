@@ -14,7 +14,7 @@ import java.text.NumberFormat;
 public class AnnuityMonth {
     
     private int month; // month this instance represents
-    private double bbal, depositEarly, depositLate, iearn, ebal;
+    private double bbal, depositEarly, depositLate, depositTotal, iearn, ebal;
     private NumberFormat curr = NumberFormat.getCurrencyInstance();
     
     public AnnuityMonth() {
@@ -22,15 +22,17 @@ public class AnnuityMonth {
         bbal = 0;
         depositEarly = 0;
         depositLate = 0;
+        depositTotal = 0;
         iearn = 0;
         ebal = 0;
     }
     
-    public AnnuityMonth(int m, double bb, double depEarly, double depLate, double ie, double eb) {
+    public AnnuityMonth(int m, double bb, double depEarly, double depLate, double depTotal, double ie, double eb) {
         month = m;
         bbal = bb;
         depositEarly = depEarly;
         depositLate = depLate;
+        depositTotal = depTotal; //depEarly + depLate;
         iearn = ie;
         ebal = eb;        
         
@@ -59,6 +61,11 @@ public class AnnuityMonth {
     
     public double getDepositLate() {
         return depositLate;
+    }
+    
+    
+    public double getDepositTotal() {
+        return this.depositTotal;
     }
     
 
