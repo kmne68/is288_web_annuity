@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Annuity</title>
     </head>
-    <body>
+    <body  OnLoad="document.adata.amt1.focus();">
         <h1>Annuity Calculator</h1>
 
         <form action="AnnuityCalc" name="adata" id="adata" method="post">

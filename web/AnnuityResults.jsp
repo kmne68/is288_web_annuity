@@ -13,6 +13,7 @@
         <title>Annuity Result</title>
     </head>
     <body>
+        
         <h1>Annuity Results:</h1>
         <p>An annuity with deposit of:<br>
             <jsp:getProperty name="annuity" property="totalDeposit" />
@@ -23,6 +24,11 @@
             months <br>
             Will have a final value of:
             <jsp:getProperty name = "annuity" property="finalValue" />
+            at the end of the term<br>
+            
+            Including 
+            <jsp:getProperty name = "annuity" property="totalInt" />
+             of interest earned.
         </p>
         <br>
         <form action="AnnuitySchedule.jsp" method="post">
