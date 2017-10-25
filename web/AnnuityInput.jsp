@@ -17,7 +17,7 @@
             Deposit at End of Month:
             <input tyep="text" name="amt2" id="amt2" value="${annuity.depositLate}"/><br><br>
             
-            Annual Interest Rate:
+            Annual Interest Rate (as a decimal):
             <input type="text" name="irt" id="irt" value="${annuity.rate}"/><br><br>
             
             Term (in mos):
