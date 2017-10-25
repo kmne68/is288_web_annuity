@@ -49,7 +49,7 @@ public class Annuity {
    }
 
    public double getRate() {
-       return this.rate * 100;
+       return this.rate;
    }
 
    public int getTerm() {
